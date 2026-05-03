@@ -1,0 +1,13 @@
+class Solution {
+public:
+    static int countBits(int n) {
+        return __builtin_popcount(n);
+    }
+    
+    vector<int> sortBySetBitCount(vector<int>& arr) {
+        stable_sort(arr.begin(), arr.end(), [](int a, int b) {
+            return __builtin_popcount(a) > __builtin_popcount(b);
+        });
+        return arr;
+    }
+};
